@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppConsultas.Principal">
+
+    <StackLayout Padding="0" BackgroundColor="LightGray" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="LightGreen" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source="logoPrincipal.jpg" Aspect="AspectFill" Margin="0"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="10,30,10,30">
+                <Frame BackgroundColor="LightGray" Opacity="0.8" HasShadow="True" HeightRequest="700" HorizontalOptions="FillAndExpand" CornerRadius="15">
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10" >
+                        <!--<Label Text="Inizio" VerticalOptions="Start"/>-->
+                        <ListView VerticalOptions="FillAndExpand" x:Name ="listaUsuarios"  ItemsSource="{Binding Usuarios}" SelectedItem="{Binding SelectedItems}" ItemSelected="listaUsuarios_ItemSelected" SelectionMode="Single" >
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="150"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                         <Label Grid.Column="0" Text ="{Binding Nombre}" HorizontalOptions="Fill"  HorizontalTextAlignment="Center" Margin="1" FontSize="Small"></Label>
+                                            <Label Grid.Column="1" Text ="{Binding email}" HorizontalOptions="Fill" HorizontalTextAlignment="Center" Margin="1" FontSize="Small"></Label>
+                                            <Label Grid.Column="2" Text ="{Binding ApellidoMaterno}" HorizontalOptions="Fill"  HorizontalTextAlignment="Center" Margin="1" FontSize="Small"></Label>
+                                            <Label Grid.Column="3" Text ="{Binding email}" HorizontalOptions="Fill"  HorizontalTextAlignment="Center" Margin="1" FontSize="Small"></Label>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <!--<Label Text="Fine" VerticalOptions="End"/>-->
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>
